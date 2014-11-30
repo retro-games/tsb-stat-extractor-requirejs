@@ -1,0 +1,22 @@
+{
+  "name": "tsbstatextractor",
+  "version": "1.0.0",
+  "description": "tsbstatextractor ================",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edrex333/tsbstatextractor.git"
+  },
+  "author": "Ed Grams",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edrex333/tsbstatextractor/issues"
+  },
+  "homepage": "https://github.com/edrex333/tsbstatextractor",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
+}

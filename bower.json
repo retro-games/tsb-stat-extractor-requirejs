@@ -1,0 +1,20 @@
+{
+  "name": "tsbstatextractor",
+  "version": "0.0.0",
+  "homepage": "https://github.com/edrex333/tsbstatextractor",
+  "authors": [
+    "Ed <edgrams333@gmail.com>"
+  ],
+  "moduleType": [
+    "amd",
+    "es6"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

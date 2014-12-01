@@ -1,7 +1,7 @@
 {
   "name": "tsbstatextractor",
   "version": "1.0.0",
-  "description": "tsbstatextractor ================",
+  "description": "tsbstatextractor",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/edrex333/tsbstatextractor",
   "devDependencies": {
-    "grunt": "^0.4.5"
+    "grunt": "^0.4.5",
+    "grunt-contrib-jasmine": "^0.8.1",
+    "grunt-contrib-requirejs": "^0.4.4"
   }
 }

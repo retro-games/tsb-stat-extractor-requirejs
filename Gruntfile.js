@@ -4,8 +4,28 @@
 
 module.exports = function(grunt) {
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json')
+        pkg: grunt.file.readJSON('package.json'),
+
+        bower: {
+            target: {
+                rjsConfig: 'src/config.js'
+            }
+        },
+
+        requirejs: {
+            compile: {
+                options: {
+                    baseUrl: 'src',
+                    mainConfigFile: 'src/config.js',
+                    include: 'test',
+                    out: 'dist/tsbextractor.js'
+                }
+            }
+        }
     });
 
-    grunt.registerTask('default',[]);
+    grunt.loadNpmTasks('grunt-bower-requirejs');
+    grunt.loadNpmTasks('grunt-contrib-requirejs');
+
+    grunt.registerTask('default', ['bower', 'requirejs']);
 };

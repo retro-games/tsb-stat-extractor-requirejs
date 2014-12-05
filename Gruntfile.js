@@ -52,5 +52,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('default', ['bower', 'jasmine', 'requirejs']);
+    grunt.registerTask('default', ['bower', 'jasmine', 'requirejs', 'karma']);
 };

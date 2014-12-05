@@ -40,8 +40,11 @@ module.exports = function(grunt) {
                 options: {
                     baseUrl: 'src',
                     mainConfigFile: 'src/config.js',
-                    include: 'test',
-                    out: 'dist/tsbextractor.js'
+                    name: 'main',
+                    out: 'dist/tsbextractor.js',
+                    paths: {
+                        "jquery": "empty:"
+                    },
                 }
             }
         }

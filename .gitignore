@@ -1,4 +1,8 @@
 # Created by .gitignore support plugin (hsz.mobi)
 .idea
 bower_components
+coverage
 node_modules
+npm-debug.log
+test-results.html
+test-results.xml

@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         bower: {
-            target: {
+            src: {
                 rjsConfig: 'src/config.js'
             }
         },
@@ -28,6 +28,13 @@ module.exports = function(grunt) {
             }
         },
 
+        karma: {
+            unit: {
+                configFile: 'karma.conf.js',
+                browsers: ['PhantomJS']
+            }
+        },
+
         requirejs: {
             compile: {
                 options: {
@@ -43,6 +50,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-bower-requirejs');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
+    grunt.loadNpmTasks('grunt-karma');
 
     grunt.registerTask('default', ['bower', 'jasmine', 'requirejs']);
 };

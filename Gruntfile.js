@@ -40,11 +40,14 @@ module.exports = function(grunt) {
                 options: {
                     baseUrl: 'src',
                     mainConfigFile: 'src/config.js',
-                    name: 'main',
-                    out: 'dist/tsbextractor.js',
+                    name: 'tsbex/main',
+                    out: 'dist/tsbstatextractor.js',
                     paths: {
                         "jquery": "empty:"
                     },
+                    wrap: {
+                        endFile: 'src/tsbex-footer.js'
+                    }
                 }
             }
         }

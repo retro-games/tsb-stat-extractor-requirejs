@@ -1,0 +1,1 @@
+define("tsbex/main",[],function(){return{create:function(){return{main:"main"}}}}),define(["tsbex/main"],function(e){return e});

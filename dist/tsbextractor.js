@@ -1,1 +1,0 @@
-define("main",["jquery"],function(e){var t=[1,2,3];e.each(t,function(e,t){console.log(t)})});

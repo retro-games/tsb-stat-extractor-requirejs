@@ -42,11 +42,11 @@ module.exports = function(config) {
     reporters: ['spec', 'junit', 'html', 'coverage'],
 
     junitReporter: {
-      outputFile: 'spec-results.xml'
+      outputFile: 'test-results.xml'
     },
 
     htmlReporter: {
-      outputFile: 'spec-results.html'
+      outputFile: 'test-results.html'
     },
 
     coverageReporter: {

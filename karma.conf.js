@@ -10,18 +10,16 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine', 'requirejs'],
+    frameworks: ['jasmine', 'requirejs', 'fixture'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      {pattern: 'bower_components/jquery/dist/jquery.js', included: false},
       {pattern: 'src/**/*.js', included: false},
-      {pattern: 'test/**/*.spec.js', included: false},
-
-      'test/test-main.js'
+      {pattern: 'spec/**/*.spec.js', included: false},
+      {pattern: 'spec/fixtures/**/*.json'},
+      'spec/test-main.js'
     ],
-
 
     // list of files to exclude
     exclude: [
@@ -32,21 +30,23 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/**/*.js': 'coverage'
+      'src/**/*.js': 'coverage',
+      '**/*.html' : ['html2js'],
+      '**/*.json' : ['html2js']
     },
 
 
-    // test results reporter to use
+    // spec results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'junit', 'html', 'coverage'],
+    reporters: ['spec', 'junit', 'html', 'coverage'],
 
     junitReporter: {
-      outputFile: 'test-results.xml'
+      outputFile: 'spec-results.xml'
     },
 
     htmlReporter: {
-      outputFile: 'test-results.html'
+      outputFile: 'spec-results.html'
     },
 
     coverageReporter: {

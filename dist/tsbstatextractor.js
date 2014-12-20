@@ -1,1 +1,1 @@
-define("tsbex/main",[],function(){return{create:function(e){return undefined}}}),define(["tsbex/main"],function(e){return e});
+define("main",[],function(){return{create:function(e){return undefined}}}),define(["main"],function(e){return e});

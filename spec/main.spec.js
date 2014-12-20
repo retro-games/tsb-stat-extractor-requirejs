@@ -2,14 +2,27 @@
  * Created by Ed on 12/4/14.
  */
 
-define(['tsbex/main'], function(m) {
-    var jsonData, jsonFixture;
+define(['main', 'using'], function(m, using) {
+    var gameData, jsonData;
+
+    gameData = {
+        "home": {
+            "score": 10,
+            "firstDowns": 5
+        },
+        "away": {
+            "score": 14,
+            "firstDowns": 2
+        }
+    };
 
     jsonData = fixture.load('stats.json');
 
-    describe('test', function() {
-        it("should have a score", function () {
-            expect(jsonData.home.score).toEqual(10);
+    describe('game stats', function() {
+        using('home game values', ['score', 'firstDowns'], function(value){
+            it('should return correct values', function() {
+                expect(jsonData.home[value]).toEqual(gameData.home[value]);
+            })
         });
     });
 });

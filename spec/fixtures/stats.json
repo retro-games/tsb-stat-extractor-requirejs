@@ -1,8 +1,10 @@
 {
   "home": {
-    "score": 10
+    "score": 10,
+    "firstDowns": 5
   },
   "away": {
-    "score": 14
+    "score": 14,
+    "firstDowns": 2
   }
 }

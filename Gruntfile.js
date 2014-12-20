@@ -12,6 +12,8 @@ module.exports = function(grunt) {
             }
         },
 
+        clean: ['coverage', 'dist'],
+
         karma: {
             unit: {
                 configFile: 'karma.conf.js',
@@ -24,7 +26,7 @@ module.exports = function(grunt) {
                 options: {
                     baseUrl: 'src',
                     mainConfigFile: 'src/config.js',
-                    name: 'tsbex/main',
+                    name: 'main',
                     out: 'dist/tsbstatextractor.js',
                     paths: {
                         "jquery": "empty:"
@@ -38,8 +40,9 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-bower-requirejs');
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('default', ['bower', 'karma', 'requirejs']);
+    grunt.registerTask('default', ['bower', 'clean', 'karma', 'requirejs']);
 };

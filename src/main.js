@@ -3,9 +3,20 @@
  */
 
 define(['team-stats'], function(teamStats) {
+    function createGameStatsJson() {
+        return {
+            "home": {},
+            "away": {}
+        }
+    }
+
     return {
         create: function (bytes) {
-            return teamStats.getFirstDowns(bytes);
+            var gameStats = createGameStatsJson();
+
+            teamStats.getFirstDowns(gameStats, bytes);
+
+            return gameStats;
         }
     }
 });

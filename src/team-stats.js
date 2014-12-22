@@ -2,20 +2,11 @@
  * Created by Ed on 12/21/14.
  */
 
-define(function() {
+define(['locations/nes/original'], function(location) {
     return {
-        getFirstDowns : function (bytes) {
-            var homeFirstDowns = bytes[6429];
-            var awayFirstDowns = bytes[6430];
-
-            return {
-                "home": {
-                    "firstDowns": homeFirstDowns
-                },
-                "away": {
-                    "firstDowns": awayFirstDowns
-                }
-            }
+        getFirstDowns : function (gameStats, bytes) {
+            gameStats.home.firstDowns = bytes[location.FIRST_DOWNS];
+            gameStats.away.firstDowns = bytes[location.FIRST_DOWNS + 1];
         }
     }
 })

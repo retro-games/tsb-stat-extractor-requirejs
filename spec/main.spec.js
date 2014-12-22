@@ -2,26 +2,24 @@
  * Created by Ed on 12/4/14.
  */
 
-define(['main', 'using'], function(m, using) {
-    var gameData, jsonData;
+define(['main', 'helpers/decode', 'helpers/using'], function(m, decode, using) {
+    var gameData, gameStats, jsonData, saveState, saveStateString;
 
-    gameData = {
-        "home": {
-            "score": 10,
-            "firstDowns": 5
-        },
-        "away": {
-            "score": 14,
-            "firstDowns": 2
-        }
-    };
-
-    jsonData = fixture.load('stats.json');
+    jsonData = fixture.load('state.json', 'stats.json');
+    gameStats = jsonData[1];
+    saveState = decode(jsonData[0].binary);
+    gameData = m.create(saveState);
 
     describe('game stats', function() {
-        using('home game values', ['score', 'firstDowns'], function(value){
+        using('home game values', ['firstDowns'], function(value){
             it('should return correct values', function() {
-                expect(jsonData.home[value]).toEqual(gameData.home[value]);
+                expect(gameStats.home[value]).toEqual(gameData.home[value]);
+            })
+        });
+
+        using('away game values', ['firstDowns'], function(value){
+            it('should return correct values', function() {
+                expect(gameStats.away[value]).toEqual(gameData.away[value]);
             })
         });
     });

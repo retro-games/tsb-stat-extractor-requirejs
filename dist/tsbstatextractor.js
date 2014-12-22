@@ -1,1 +1,1 @@
-define("main",[],function(){return{create:function(e){return undefined}}}),define(["main"],function(e){return e});
+define("team-stats",[],function(){return{getFirstDowns:function(e){var t=e[6429],n=e[6430];return{home:{firstDowns:t},away:{firstDowns:n}}}}}),define("main",["team-stats"],function(e){return{create:function(t){return e.getFirstDowns(t)}}}),define(["main"],function(e){return e});

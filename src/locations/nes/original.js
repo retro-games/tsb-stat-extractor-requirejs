@@ -4,6 +4,7 @@
 
 define(function() {
     return {
-        FIRST_DOWNS: 6429
+        FIRST_DOWNS: 6429,
+        SCORES: 973
     }
 });

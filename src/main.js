@@ -2,19 +2,13 @@
  * Created by Ed on 12/3/14.
  */
 
-define(['team-stats'], function(teamStats) {
-    function createGameStatsJson() {
-        return {
-            "home": {},
-            "away": {}
-        }
-    }
-
+define(['definition', 'team-stats'], function(Definition, teamStats) {
     return {
         create: function (bytes) {
-            var gameStats = createGameStatsJson();
+            var gameStats = new Definition();
 
-            teamStats.getFirstDowns(gameStats, bytes);
+            teamStats.mapFirstDowns(gameStats, bytes);
+            teamStats.mapScores(gameStats, bytes);
 
             return gameStats;
         }

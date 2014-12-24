@@ -5,6 +5,7 @@
 define(function() {
     return {
         FIRST_DOWNS: 6429,
-        SCORES: 973
+        SCORES: 973,
+        TEAM_IDS: 164
     }
 });

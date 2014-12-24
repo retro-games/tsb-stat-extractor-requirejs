@@ -18,13 +18,13 @@ define(['team-stats', 'definition', 'helpers/decode', 'helpers/using'], function
 
             using('home team values', ['firstDowns'], function (value) {
                 it('should return correct values', function () {
-                    expect(gameStats.home[value]).toEqual(gameData.home[value]);
+                    expect(gameStats.home.game[value]).toEqual(gameData.home.game[value]);
                 })
             });
 
             using('away team values', ['firstDowns'], function (value) {
                 it('should return correct values', function () {
-                    expect(gameStats.away[value]).toEqual(gameData.away[value]);
+                    expect(gameStats.away.game[value]).toEqual(gameData.away.game[value]);
                 })
             });
         });
@@ -39,16 +39,34 @@ define(['team-stats', 'definition', 'helpers/decode', 'helpers/using'], function
             using('home team values', ['firstQuarter', 'secondQuarter', 'thirdQuarter',
                 'fourthQuarter', 'final'], function (value) {
                 it('should return correct values', function () {
-                    expect(gameStats.home.score[value]).toEqual(gameData.home.score[value]);
+                    expect(gameStats.home.game.score[value]).toEqual(gameData.home.game.score[value]);
                 })
             });
 
             using('away team values', ['firstQuarter', 'secondQuarter', 'thirdQuarter',
                 'fourthQuarter', 'final'], function (value) {
                 it('should return correct values', function () {
-                    expect(gameStats.away.score[value]).toEqual(gameData.away.score[value]);
+                    expect(gameStats.away.game.score[value]).toEqual(gameData.away.game.score[value]);
                 })
             });
         })
+
+        describe('team ids', function () {
+            beforeEach(function () {
+                m.mapTeamIds(gameData, saveState);
+            })
+
+            using('home team values', ['teamId'], function (value) {
+                it('should return correct values', function () {
+                    expect(gameStats.home.game[value]).toEqual(gameData.home.game[value]);
+                })
+            });
+
+            using('away team values', ['teamId'], function (value) {
+                it('should return correct values', function () {
+                    expect(gameStats.away.game[value]).toEqual(gameData.away.game[value]);
+                })
+            });
+        });
     });
 });

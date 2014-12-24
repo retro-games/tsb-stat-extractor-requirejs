@@ -6,23 +6,29 @@ define(function() {
     function Definition() {
         return {
             home: {
-                firstDowns: undefined,
-                score: {
-                    firstQuarter: undefined,
-                    secondQuarter: undefined,
-                    thirdQuarter: undefined,
-                    fourthQuarter: undefined,
-                    final: undefined
+                game: {
+                    firstDowns: undefined,
+                    score: {
+                        firstQuarter: undefined,
+                        secondQuarter: undefined,
+                        thirdQuarter: undefined,
+                        fourthQuarter: undefined,
+                        final: undefined
+                    },
+                    teamId: undefined
                 }
             },
             away: {
-                firstDowns: undefined,
-                score: {
-                    firstQuarter: undefined,
-                    secondQuarter: undefined,
-                    thirdQuarter: undefined,
-                    fourthQuarter: undefined,
-                    final: undefined
+                game: {
+                    firstDowns: undefined,
+                    score: {
+                        firstQuarter: undefined,
+                        secondQuarter: undefined,
+                        thirdQuarter: undefined,
+                        fourthQuarter: undefined,
+                        final: undefined
+                    },
+                    teamId: undefined
                 }
             }
         }

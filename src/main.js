@@ -2,13 +2,12 @@
  * Created by Ed on 12/3/14.
  */
 
-define(['definition', 'team-stats'], function(Definition, teamStats) {
+define(['definitions/game-stats', 'mappers/team-stats'], function(GameStats, teamStats) {
     return {
         create: function (bytes) {
-            var gameStats = new Definition();
+            var gameStats = new GameStats();
 
-            teamStats.mapFirstDowns(gameStats, bytes);
-            teamStats.mapScores(gameStats, bytes);
+            teamStats.mapTeamStats(gameStats, bytes);
 
             return gameStats;
         }

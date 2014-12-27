@@ -1,6 +1,6 @@
 {
   "home": {
-    "game": {
+    "team": {
       "firstDowns": 8,
       "score": {
         "firstQuarter": 7,
@@ -13,7 +13,7 @@
     }
   },
   "away": {
-    "game": {
+    "team": {
       "firstDowns": 7,
       "score": {
         "firstQuarter": 7,

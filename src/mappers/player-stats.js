@@ -2,9 +2,10 @@
  * Created by Ed on 12/27/14.
  */
 
-define(['definitions/players/qb-stats', 'definitions/players/off-player-stats', 'definitions/players/def-player-stats',
+define(['attributes/condition', 'attributes/health', 'definitions/players/qb-stats',
+        'definitions/players/off-player-stats', 'definitions/players/def-player-stats',
         'definitions/players/kick-stats', 'definitions/players/punt-stats', 'locations/nes/nestopia/original'],
-    function(QBStats, OffPlayerStats, DefPlayerStats, KickStats, PuntStats, location) {
+    function(condition, health, QBStats, OffPlayerStats, DefPlayerStats, KickStats, PuntStats, location) {
 
         function mapQBStats(playerStats, bytePosition, bytes) {
             var qbStats;
@@ -82,6 +83,28 @@ define(['definitions/players/qb-stats', 'definitions/players/off-player-stats', 
             puntStats.puntYards = getYards(bytes[bytePosition++], bytes[bytePosition++]);
 
             playerStats.push(puntStats);
+
+            return bytePosition;
+        }
+
+        function mapHealth(playerStats, bytePosition, bytes) {
+            var playersHealth = "";
+            for (var i = 0; i <= 2; i++)
+            {
+                var binaryHealth = bytes[bytePosition++].toString(2);
+                for (var j = binaryHealth.length; j < 8; j++) {
+                    binaryHealth = "0" + binaryHealth;
+                }
+                playersHealth += binaryHealth;
+            }
+
+            for (var k = 0; k < 12; k++) {
+                var start = k * 2;
+                var end = start + 2;
+                playerStats[k].health = health.getValue(playersHealth.substring(start, end));
+            }
+
+            return bytePosition;
         }
 
         function mapPlayerStats(playerStats, bytePosition, bytes) {
@@ -89,8 +112,12 @@ define(['definitions/players/qb-stats', 'definitions/players/off-player-stats', 
             bytePosition = mapOffPlayerStats(playerStats, bytePosition, bytes);
             bytePosition = mapDefPlayerStats(playerStats, bytePosition, bytes);
             bytePosition = mapKickStats(playerStats, bytePosition, bytes);
-            mapPuntStats(playerStats, bytePosition, bytes);
+            bytePosition = mapPuntStats(playerStats, bytePosition, bytes);
 
+            // skip 8 bytes for health / conditions
+            bytePosition += 8;
+
+            bytePosition = mapHealth(playerStats, bytePosition, bytes);
         }
 
         function getYards(remainder, multiplier) {

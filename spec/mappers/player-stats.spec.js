@@ -103,5 +103,23 @@ define(['mappers/player-stats', 'definitions/game-stats', 'helpers/decode', 'hel
                     })
                 });
             });
+
+            describe('health stats', function () {
+                using('home team values', ['health'], function (value) {
+                    it('should return correct values', function () {
+                        for (var i = 0; i < 12; i++) {
+                            expect(gameStats.home.player[i][value]).toEqual(gameData.home.player[i][value]);
+                        }
+                    })
+                });
+
+                using('away team values', ['health'], function (value) {
+                    it('should return correct values', function () {
+                        for (var i = 0; i < 12; i++) {
+                            expect(gameStats.away.player[i][value]).toEqual(gameData.away.player[i][value]);
+                        }
+                    })
+                });
+            });
         });
     });

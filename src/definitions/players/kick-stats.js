@@ -7,6 +7,7 @@ define(function() {
     function Definition() {
 
         return {
+            condition: undefined,
             fieldGoalAttempts: undefined,
             fieldGoalsMade: undefined,
             extraPointAttempts: undefined,

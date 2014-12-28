@@ -7,6 +7,8 @@ define(function() {
     function Definition() {
 
         return {
+            condition: undefined,
+            health: undefined,
             rushAttempts: undefined,
             rushYards: undefined,
             rushTouchdowns: undefined,

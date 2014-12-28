@@ -82,8 +82,6 @@ define(['definitions/players/qb-stats', 'definitions/players/off-player-stats', 
             puntStats.puntYards = getYards(bytes[bytePosition++], bytes[bytePosition++]);
 
             playerStats.push(puntStats);
-
-            return bytePosition;
         }
 
         function mapPlayerStats(playerStats, bytePosition, bytes) {
@@ -91,9 +89,8 @@ define(['definitions/players/qb-stats', 'definitions/players/off-player-stats', 
             bytePosition = mapOffPlayerStats(playerStats, bytePosition, bytes);
             bytePosition = mapDefPlayerStats(playerStats, bytePosition, bytes);
             bytePosition = mapKickStats(playerStats, bytePosition, bytes);
-            bytePosition = mapPuntStats(playerStats, bytePosition, bytes);
+            mapPuntStats(playerStats, bytePosition, bytes);
 
-            return bytePosition;
         }
 
         function getYards(remainder, multiplier) {
@@ -110,9 +107,8 @@ define(['definitions/players/qb-stats', 'definitions/players/off-player-stats', 
 
         return {
             mapPlayerStats: function (gameStats, bytes) {
-                var bytePosition = location.PLAYER_STATS;
-
-                bytePosition = mapPlayerStats(gameStats.home.player, bytePosition, bytes);
+                mapPlayerStats(gameStats.home.player, location.PLAYER_STATS_HOME, bytes);
+                mapPlayerStats(gameStats.away.player, location.PLAYER_STATS_AWAY, bytes);
             }
         }
     })

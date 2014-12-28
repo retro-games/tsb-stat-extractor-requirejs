@@ -6,6 +6,8 @@ define(function() {
 
     function Definition() {
         return {
+            condition: undefined,
+            health: undefined,
             passAttempts: undefined,
             passCompletions: undefined,
             passYards: undefined,

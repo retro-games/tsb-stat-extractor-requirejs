@@ -7,6 +7,7 @@ define(function() {
     function Definition() {
 
         return {
+            condition: undefined,
             punts: undefined,
             puntYards: undefined
         }

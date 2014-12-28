@@ -18,8 +18,21 @@ define(['mappers/player-stats', 'definitions/game-stats', 'helpers/decode', 'hel
                 using('home team values', ['passAttempts', 'passCompletions', 'passYards', 'passTouchdowns',
                     'passInterceptions', 'rushAttempts', 'rushYards', 'rushTouchdowns'], function (value) {
                     it('should return correct values', function () {
-                        expect(gameStats.home.player[0][value]).toEqual(gameData.home.player[0][value]);
-                        expect(gameStats.home.player[1][value]).toEqual(gameData.home.player[1][value]);
+                        for (var i = 0; i < 2; i++) {
+                            expect(gameStats.home.player[i][value]).toEqual(gameData.home.player[i][value]);
+                        }
+                    })
+                });
+            });
+
+            describe('offensive player stats', function () {
+                using('home team values', ['rushAttempts', 'rushYards', 'rushTouchdowns', 'receptions',
+                    'recYards', 'recTouchdowns', 'kickReturns', 'kickReturnYards', 'kickReturnTouchdowns',
+                    'puntReturns', 'puntReturnYards', 'puntReturnTouchdowns'], function (value) {
+                    it('should return correct values', function () {
+                        for (var i = 2; i < 12; i++) {
+                            expect(gameStats.home.player[i][value]).toEqual(gameData.home.player[i][value]);
+                        }
                     })
                 });
             });

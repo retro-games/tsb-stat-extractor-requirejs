@@ -36,5 +36,15 @@ define(['mappers/player-stats', 'definitions/game-stats', 'helpers/decode', 'hel
                     })
                 });
             });
+
+            describe('defensive player stats', function () {
+                using('home team values', ['sacks', 'interceptions', 'intYards', 'intTouchdowns'], function (value) {
+                    it('should return correct values', function () {
+                        for (var i = 12; i < 23; i++) {
+                            expect(gameStats.home.player[i][value]).toEqual(gameData.home.player[i][value]);
+                        }
+                    })
+                });
+            });
         });
     });

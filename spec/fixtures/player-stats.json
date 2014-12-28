@@ -2,6 +2,7 @@
   "home": {
     "player": [
       {
+        "type": "home qb 1",
         "passAttempts": 13,
         "passCompletions": 7,
         "passYards": 193,
@@ -12,6 +13,7 @@
         "rushTouchdowns": 0
       },
       {
+        "type": "home qb 2",
         "passAttempts": 0,
         "passCompletions": 0,
         "passYards": 0,
@@ -22,6 +24,7 @@
         "rushTouchdowns": 0
       },
       {
+        "type": "home rb 1",
         "rushAttempts": 1,
         "rushYards": 6,
         "rushTouchdowns": 0,
@@ -36,6 +39,7 @@
         "puntReturnTouchdowns": 0
       },
       {
+        "type": "home rb 2",
         "rushAttempts": 8,
         "rushYards": 12,
         "rushTouchdowns": 1,
@@ -50,6 +54,7 @@
         "puntReturnTouchdowns": 0
       },
       {
+        "type": "home rb 3",
         "rushAttempts": 0,
         "rushYards": 0,
         "rushTouchdowns": 0,
@@ -64,6 +69,7 @@
         "puntReturnTouchdowns": 0
       },
       {
+        "type": "home rb 4",
         "rushAttempts": 0,
         "rushYards": 0,
         "rushTouchdowns": 0,
@@ -78,6 +84,7 @@
         "puntReturnTouchdowns": 0
       },
       {
+        "type": "home wr 1",
         "rushAttempts": 0,
         "rushYards": 0,
         "rushTouchdowns": 0,
@@ -92,6 +99,7 @@
         "puntReturnTouchdowns": 0
       },
       {
+        "type": "home wr 2",
         "rushAttempts": 0,
         "rushYards": 0,
         "rushTouchdowns": 0,
@@ -106,6 +114,7 @@
         "puntReturnTouchdowns": 0
       },
       {
+        "type": "home wr 3",
         "rushAttempts": 0,
         "rushYards": 0,
         "rushTouchdowns": 0,
@@ -120,6 +129,7 @@
         "puntReturnTouchdowns": 0
       },
       {
+        "type": "home wr 4",
         "rushAttempts": 0,
         "rushYards": 0,
         "rushTouchdowns": 0,
@@ -134,6 +144,7 @@
         "puntReturnTouchdowns": 0
       },
       {
+        "type": "home te 1",
         "rushAttempts": 0,
         "rushYards": 0,
         "rushTouchdowns": 0,
@@ -148,6 +159,7 @@
         "puntReturnTouchdowns": 0
       },
       {
+        "type": "home te 2",
         "rushAttempts": 0,
         "rushYards": 0,
         "rushTouchdowns": 0,
@@ -160,6 +172,83 @@
         "puntReturns": 0,
         "puntReturnYards": 0,
         "puntReturnTouchdowns": 0
+      },
+      {
+        "type": "home dl 1",
+        "sacks": 0,
+        "interceptions": 0,
+        "intYards": 0,
+        "intTouchdowns": 0
+      },
+      {
+        "type": "home dl 2",
+        "sacks": 0,
+        "interceptions": 0,
+        "intYards": 0,
+        "intTouchdowns": 0
+      },
+      {
+        "type": "home dl 3",
+        "sacks": 1,
+        "interceptions": 0,
+        "intYards": 0,
+        "intTouchdowns": 0
+      },
+      {
+        "type": "home lb 1",
+        "sacks": 0,
+        "interceptions": 0,
+        "intYards": 0,
+        "intTouchdowns": 0
+      },
+      {
+        "type": "home lb 2",
+        "sacks": 0,
+        "interceptions": 0,
+        "intYards": 0,
+        "intTouchdowns": 0
+      },
+      {
+        "type": "home lb 3",
+        "sacks": 0,
+        "interceptions": 0,
+        "intYards": 0,
+        "intTouchdowns": 0
+      },
+      {
+        "type": "home lb 4",
+        "sacks": 1,
+        "interceptions": 0,
+        "intYards": 0,
+        "intTouchdowns": 0
+      },
+      {
+        "type": "home db 1",
+        "sacks": 0,
+        "interceptions": 0,
+        "intYards": 0,
+        "intTouchdowns": 0
+      },
+      {
+        "type": "home db 2",
+        "sacks": 0,
+        "interceptions": 0,
+        "intYards": 0,
+        "intTouchdowns": 0
+      },
+      {
+        "type": "home db 3",
+        "sacks": 0,
+        "interceptions": 0,
+        "intYards": 0,
+        "intTouchdowns": 0
+      },
+      {
+        "type": "home db 4",
+        "sacks": 0,
+        "interceptions": 0,
+        "intYards": 0,
+        "intTouchdowns": 0
       }
     ]
   }

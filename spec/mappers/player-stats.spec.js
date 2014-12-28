@@ -121,5 +121,23 @@ define(['mappers/player-stats', 'definitions/game-stats', 'helpers/decode', 'hel
                     })
                 });
             });
+
+            describe('conditions stats', function () {
+                using('home team values', ['condition'], function (value) {
+                    it('should return correct values', function () {
+                        for (var i = 0; i < 25; i++) {
+                            expect(gameStats.home.player[i][value]).toEqual(gameData.home.player[i][value]);
+                        }
+                    })
+                });
+
+                using('away team values', ['condition'], function (value) {
+                    it('should return correct values', function () {
+                        for (var i = 0; i < 25; i++) {
+                            expect(gameStats.away.player[i][value]).toEqual(gameData.away.player[i][value]);
+                        }
+                    })
+                });
+            });
         });
     });

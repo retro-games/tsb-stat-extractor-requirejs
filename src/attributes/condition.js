@@ -14,16 +14,16 @@ define(function () {
 
         switch (conditionBinary) {
             case "00":
-                conditionValue = EXCELLENT;
+                conditionValue = BAD;
                 break;
             case "01":
-                conditionValue = GOOD;
-                break;
-            case "10":
                 conditionValue = AVERAGE;
                 break;
+            case "10":
+                conditionValue = GOOD;
+                break;
             case "11":
-                conditionValue = BAD;
+                conditionValue = EXCELLENT;
                 break;
         }
 

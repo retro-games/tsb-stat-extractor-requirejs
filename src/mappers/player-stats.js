@@ -89,7 +89,7 @@ define(['attributes/condition', 'attributes/health', 'definitions/players/qb-sta
 
         function mapHealth(playerStats, bytePosition, bytes) {
             var playersHealth = "";
-            for (var i = 0; i <= 2; i++)
+            for (var i = 0; i < 3; i++)
             {
                 var binaryHealth = bytes[bytePosition++].toString(2);
                 for (var j = binaryHealth.length; j < 8; j++) {
@@ -107,6 +107,24 @@ define(['attributes/condition', 'attributes/health', 'definitions/players/qb-sta
             return bytePosition;
         }
 
+        function mapCondition(playerStats, bytePosition, bytes) {
+            var playersCondition = "";
+            for (var i = 0; i < 8; i++)
+            {
+                var binaryCondition = bytes[bytePosition++].toString(2);
+                for (var j = binaryCondition.length; j < 8; j++) {
+                    binaryCondition = "0" + binaryCondition;
+                }
+                playersCondition += binaryCondition;
+            }
+
+            for (var k = 0; k < 25; k++) {
+                var start = k * 2;
+                var end = start + 2;
+                playerStats[k].condition = condition.getValue(playersCondition.substring(start, end));
+            }
+        }
+
         function mapPlayerStats(playerStats, bytePosition, bytes) {
             bytePosition = mapQBStats(playerStats, bytePosition, bytes);
             bytePosition = mapOffPlayerStats(playerStats, bytePosition, bytes);
@@ -118,6 +136,7 @@ define(['attributes/condition', 'attributes/health', 'definitions/players/qb-sta
             bytePosition += 8;
 
             bytePosition = mapHealth(playerStats, bytePosition, bytes);
+            mapCondition(playerStats, bytePosition, bytes);
         }
 
         function getYards(remainder, multiplier) {

@@ -263,5 +263,270 @@
         "puntYards": 95
       }
     ]
+  },
+  "away": {
+    "player": [
+      {
+        "type": "away qb 1",
+        "passAttempts": 13,
+        "passCompletions": 7,
+        "passYards": 279,
+        "passTouchdowns": 3,
+        "passInterceptions": 0,
+        "rushAttempts": 2,
+        "rushYards": 16,
+        "rushTouchdowns": 0
+      },
+      {
+        "type": "away qb 2",
+        "passAttempts": 0,
+        "passCompletions": 0,
+        "passYards": 0,
+        "passTouchdowns": 0,
+        "passInterceptions": 0,
+        "rushAttempts": 0,
+        "rushYards": 0,
+        "rushTouchdowns": 0
+      },
+      {
+        "type": "away rb 1",
+        "rushAttempts": 7,
+        "rushYards": 37,
+        "rushTouchdowns": 0,
+        "receptions": 1,
+        "recYards": 34,
+        "recTouchdowns": 0,
+        "kickReturns": 0,
+        "kickReturnYards": 0,
+        "kickReturnTouchdowns": 0,
+        "puntReturns": 0,
+        "puntReturnYards": 0,
+        "puntReturnTouchdowns": 0
+      },
+      {
+        "type": "away rb 2",
+        "rushAttempts": 0,
+        "rushYards": 0,
+        "rushTouchdowns": 0,
+        "receptions": 1,
+        "recYards": 14,
+        "recTouchdowns": 0,
+        "kickReturns": 0,
+        "kickReturnYards": 0,
+        "kickReturnTouchdowns": 0,
+        "puntReturns": 0,
+        "puntReturnYards": 0,
+        "puntReturnTouchdowns": 0
+      },
+      {
+        "type": "away rb 3",
+        "rushAttempts": 0,
+        "rushYards": 0,
+        "rushTouchdowns": 0,
+        "receptions": 0,
+        "recYards": 0,
+        "recTouchdowns": 0,
+        "kickReturns": 0,
+        "kickReturnYards": 0,
+        "kickReturnTouchdowns": 0,
+        "puntReturns": 0,
+        "puntReturnYards": 0,
+        "puntReturnTouchdowns": 0
+      },
+      {
+        "type": "away rb 4",
+        "rushAttempts": 0,
+        "rushYards": 0,
+        "rushTouchdowns": 0,
+        "receptions": 0,
+        "recYards": 0,
+        "recTouchdowns": 0,
+        "kickReturns": 3,
+        "kickReturnYards": 40,
+        "kickReturnTouchdowns": 0,
+        "puntReturns": 0,
+        "puntReturnYards": 0,
+        "puntReturnTouchdowns": 0
+      },
+      {
+        "type": "away wr 1",
+        "rushAttempts": 0,
+        "rushYards": 0,
+        "rushTouchdowns": 0,
+        "receptions": 1,
+        "recYards": 43,
+        "recTouchdowns": 1,
+        "kickReturns": 0,
+        "kickReturnYards": 0,
+        "kickReturnTouchdowns": 0,
+        "puntReturns": 0,
+        "puntReturnYards": 0,
+        "puntReturnTouchdowns": 0
+      },
+      {
+        "type": "away wr 2",
+        "rushAttempts": 0,
+        "rushYards": 0,
+        "rushTouchdowns": 0,
+        "receptions": 2,
+        "recYards": 108,
+        "recTouchdowns": 2,
+        "kickReturns": 0,
+        "kickReturnYards": 0,
+        "kickReturnTouchdowns": 0,
+        "puntReturns": 2,
+        "puntReturnYards": 15,
+        "puntReturnTouchdowns": 0
+      },
+      {
+        "type": "away wr 3",
+        "rushAttempts": 0,
+        "rushYards": 0,
+        "rushTouchdowns": 0,
+        "receptions": 0,
+        "recYards": 0,
+        "recTouchdowns": 0,
+        "kickReturns": 0,
+        "kickReturnYards": 0,
+        "kickReturnTouchdowns": 0,
+        "puntReturns": 0,
+        "puntReturnYards": 0,
+        "puntReturnTouchdowns": 0
+      },
+      {
+        "type": "away wr 4",
+        "rushAttempts": 0,
+        "rushYards": 0,
+        "rushTouchdowns": 0,
+        "receptions": 0,
+        "recYards": 0,
+        "recTouchdowns": 0,
+        "kickReturns": 0,
+        "kickReturnYards": 0,
+        "kickReturnTouchdowns": 0,
+        "puntReturns": 0,
+        "puntReturnYards": 0,
+        "puntReturnTouchdowns": 0
+      },
+      {
+        "type": "away te 1",
+        "rushAttempts": 0,
+        "rushYards": 0,
+        "rushTouchdowns": 0,
+        "receptions": 2,
+        "recYards": 80,
+        "recTouchdowns": 0,
+        "kickReturns": 0,
+        "kickReturnYards": 0,
+        "kickReturnTouchdowns": 0,
+        "puntReturns": 0,
+        "puntReturnYards": 0,
+        "puntReturnTouchdowns": 0
+      },
+      {
+        "type": "away te 2",
+        "rushAttempts": 0,
+        "rushYards": 0,
+        "rushTouchdowns": 0,
+        "receptions": 0,
+        "recYards": 0,
+        "recTouchdowns": 0,
+        "kickReturns": 0,
+        "kickReturnYards": 0,
+        "kickReturnTouchdowns": 0,
+        "puntReturns": 0,
+        "puntReturnYards": 0,
+        "puntReturnTouchdowns": 0
+      },
+      {
+        "type": "away dl 1",
+        "sacks": 0,
+        "interceptions": 0,
+        "intYards": 0,
+        "intTouchdowns": 0
+      },
+      {
+        "type": "away dl 2",
+        "sacks": 0,
+        "interceptions": 0,
+        "intYards": 0,
+        "intTouchdowns": 0
+      },
+      {
+        "type": "away dl 3",
+        "sacks": 0,
+        "interceptions": 0,
+        "intYards": 0,
+        "intTouchdowns": 0
+      },
+      {
+        "type": "away lb 1",
+        "sacks": 0,
+        "interceptions": 0,
+        "intYards": 0,
+        "intTouchdowns": 0
+      },
+      {
+        "type": "away lb 2",
+        "sacks": 0,
+        "interceptions": 0,
+        "intYards": 0,
+        "intTouchdowns": 0
+      },
+      {
+        "type": "away lb 3",
+        "sacks": 3,
+        "interceptions": 0,
+        "intYards": 0,
+        "intTouchdowns": 0
+      },
+      {
+        "type": "away lb 4",
+        "sacks": 0,
+        "interceptions": 0,
+        "intYards": 0,
+        "intTouchdowns": 0
+      },
+      {
+        "type": "away db 1",
+        "sacks": 0,
+        "interceptions": 0,
+        "intYards": 0,
+        "intTouchdowns": 0
+      },
+      {
+        "type": "away db 2",
+        "sacks": 0,
+        "interceptions": 1,
+        "intYards": 0,
+        "intTouchdowns": 0
+      },
+      {
+        "type": "away db 3",
+        "sacks": 0,
+        "interceptions": 0,
+        "intYards": 0,
+        "intTouchdowns": 0
+      },
+      {
+        "type": "away db 4",
+        "sacks": 0,
+        "interceptions": 0,
+        "intYards": 0,
+        "intTouchdowns": 0
+      },
+      {
+        "type": "away kicker",
+        "fieldGoalAttempts": 3,
+        "fieldGoalsMade": 3,
+        "extraPointAttempts": 2,
+        "extraPointsMade": 2
+      },
+      {
+        "type": "away punter",
+        "punts": 0,
+        "puntYards": 0
+      }
+    ]
   }
 }

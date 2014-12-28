@@ -23,6 +23,15 @@ define(['mappers/player-stats', 'definitions/game-stats', 'helpers/decode', 'hel
                         }
                     })
                 });
+
+                using('away team values', ['passAttempts', 'passCompletions', 'passYards', 'passTouchdowns',
+                    'passInterceptions', 'rushAttempts', 'rushYards', 'rushTouchdowns'], function (value) {
+                    it('should return correct values', function () {
+                        for (var i = 0; i < 2; i++) {
+                            expect(gameStats.away.player[i][value]).toEqual(gameData.away.player[i][value]);
+                        }
+                    })
+                });
             });
 
             describe('offensive player stats', function () {
@@ -32,6 +41,16 @@ define(['mappers/player-stats', 'definitions/game-stats', 'helpers/decode', 'hel
                     it('should return correct values', function () {
                         for (var i = 2; i < 12; i++) {
                             expect(gameStats.home.player[i][value]).toEqual(gameData.home.player[i][value]);
+                        }
+                    })
+                });
+
+                using('away team values', ['rushAttempts', 'rushYards', 'rushTouchdowns', 'receptions',
+                    'recYards', 'recTouchdowns', 'kickReturns', 'kickReturnYards', 'kickReturnTouchdowns',
+                    'puntReturns', 'puntReturnYards', 'puntReturnTouchdowns'], function (value) {
+                    it('should return correct values', function () {
+                        for (var i = 2; i < 12; i++) {
+                            expect(gameStats.away.player[i][value]).toEqual(gameData.away.player[i][value]);
                         }
                     })
                 });
@@ -45,6 +64,14 @@ define(['mappers/player-stats', 'definitions/game-stats', 'helpers/decode', 'hel
                         }
                     })
                 });
+
+                using('away team values', ['sacks', 'interceptions', 'intYards', 'intTouchdowns'], function (value) {
+                    it('should return correct values', function () {
+                        for (var i = 12; i < 23; i++) {
+                            expect(gameStats.away.player[i][value]).toEqual(gameData.away.player[i][value]);
+                        }
+                    })
+                });
             });
 
             describe('kicker stats', function () {
@@ -54,12 +81,25 @@ define(['mappers/player-stats', 'definitions/game-stats', 'helpers/decode', 'hel
                         expect(gameStats.home.player[23][value]).toEqual(gameData.home.player[23][value]);
                     })
                 });
+
+                using('away team values', ['fieldGoalAttempts', 'fieldGoalsMade', 'extraPointAttempts',
+                    'extraPointsMade'], function (value) {
+                    it('should return correct values', function () {
+                        expect(gameStats.away.player[23][value]).toEqual(gameData.away.player[23][value]);
+                    })
+                });
             });
 
             describe('punter stats', function () {
                 using('home team values', ['punts', 'puntYards'], function (value) {
                     it('should return correct values', function () {
                         expect(gameStats.home.player[24][value]).toEqual(gameData.home.player[24][value]);
+                    })
+                });
+
+                using('away team values', ['punts', 'puntYards'], function (value) {
+                    it('should return correct values', function () {
+                        expect(gameStats.away.player[24][value]).toEqual(gameData.away.player[24][value]);
                     })
                 });
             });

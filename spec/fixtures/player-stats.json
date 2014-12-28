@@ -249,6 +249,18 @@
         "interceptions": 0,
         "intYards": 0,
         "intTouchdowns": 0
+      },
+      {
+        "type": "home kicker",
+        "fieldGoalAttempts": 2,
+        "fieldGoalsMade": 2,
+        "extraPointAttempts": 1,
+        "extraPointsMade": 0
+      },
+      {
+        "type": "home punter",
+        "punts": 2,
+        "puntYards": 95
       }
     ]
   }

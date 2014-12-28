@@ -46,5 +46,22 @@ define(['mappers/player-stats', 'definitions/game-stats', 'helpers/decode', 'hel
                     })
                 });
             });
+
+            describe('kicker stats', function () {
+                using('home team values', ['fieldGoalAttempts', 'fieldGoalsMade', 'extraPointAttempts',
+                    'extraPointsMade'], function (value) {
+                    it('should return correct values', function () {
+                        expect(gameStats.home.player[23][value]).toEqual(gameData.home.player[23][value]);
+                    })
+                });
+            });
+
+            describe('punter stats', function () {
+                using('home team values', ['punts', 'puntYards'], function (value) {
+                    it('should return correct values', function () {
+                        expect(gameStats.home.player[24][value]).toEqual(gameData.home.player[24][value]);
+                    })
+                });
+            });
         });
     });

@@ -3,8 +3,8 @@
  */
 
 define(['definitions/players/qb-stats', 'definitions/players/off-player-stats', 'definitions/players/def-player-stats',
-        'locations/nes/nestopia/original'],
-    function(QBStats, OffPlayerStats, DefPlayerStats, location) {
+        'definitions/players/kick-stats', 'definitions/players/punt-stats', 'locations/nes/nestopia/original'],
+    function(QBStats, OffPlayerStats, DefPlayerStats, KickStats, PuntStats, location) {
 
         function mapQBStats(playerStats, bytePosition, bytes) {
             var qbStats;
@@ -63,6 +63,39 @@ define(['definitions/players/qb-stats', 'definitions/players/off-player-stats', 
             return bytePosition;
         }
 
+        function mapKickStats(playerStats, bytePosition, bytes) {
+            var kickStats = new KickStats();
+
+            kickStats.fieldGoalAttempts = bytes[bytePosition++];
+            kickStats.fieldGoalsMade = bytes[bytePosition++];
+            kickStats.extraPointAttempts = bytes[bytePosition++];
+            kickStats.extraPointsMade = bytes[bytePosition++];
+            playerStats.push(kickStats);
+
+            return bytePosition;
+        }
+
+        function mapPuntStats(playerStats, bytePosition, bytes) {
+            var puntStats = new PuntStats();
+
+            puntStats.punts = bytes[bytePosition++];
+            puntStats.puntYards = getYards(bytes[bytePosition++], bytes[bytePosition++]);
+
+            playerStats.push(puntStats);
+
+            return bytePosition;
+        }
+
+        function mapPlayerStats(playerStats, bytePosition, bytes) {
+            bytePosition = mapQBStats(playerStats, bytePosition, bytes);
+            bytePosition = mapOffPlayerStats(playerStats, bytePosition, bytes);
+            bytePosition = mapDefPlayerStats(playerStats, bytePosition, bytes);
+            bytePosition = mapKickStats(playerStats, bytePosition, bytes);
+            bytePosition = mapPuntStats(playerStats, bytePosition, bytes);
+
+            return bytePosition;
+        }
+
         function getYards(remainder, multiplier) {
             var totalYards;
 
@@ -79,9 +112,7 @@ define(['definitions/players/qb-stats', 'definitions/players/off-player-stats', 
             mapPlayerStats: function (gameStats, bytes) {
                 var bytePosition = location.PLAYER_STATS;
 
-                bytePosition = mapQBStats(gameStats.home.player, bytePosition, bytes);
-                bytePosition = mapOffPlayerStats(gameStats.home.player, bytePosition, bytes);
-                bytePosition = mapDefPlayerStats(gameStats.home.player, bytePosition, bytes);
+                bytePosition = mapPlayerStats(gameStats.home.player, bytePosition, bytes);
             }
         }
     })

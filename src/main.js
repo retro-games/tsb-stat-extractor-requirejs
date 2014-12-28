@@ -2,8 +2,9 @@
  * Created by Ed on 12/3/14.
  */
 
-define(['definitions/game-stats', 'mappers/team-stats', 'mappers/player-stats'],
-    function(GameStats, teamStats, playerStats) {
+define(['definitions/game-stats', 'mappers/player-stats', 'mappers/team-stats'],
+    function(GameStats, playerStats, teamStats) {
+
         return {
             create: function (bytes) {
                 var gameStats = new GameStats();
@@ -12,6 +13,11 @@ define(['definitions/game-stats', 'mappers/team-stats', 'mappers/player-stats'],
                 playerStats.mapPlayerStats(gameStats, bytes);
 
                 return gameStats;
+            },
+
+            inject: function(playerStatsMock, teamStatsMock) {
+                playerStats = playerStatsMock;
+                teamStats = teamStatsMock;
             }
         }
     });

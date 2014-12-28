@@ -3,6 +3,7 @@
  */
 
 define(function() {
+
     function Definition() {
         return {
             firstDowns: undefined,

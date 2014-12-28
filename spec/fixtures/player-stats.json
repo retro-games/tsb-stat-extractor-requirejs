@@ -1,0 +1,26 @@
+{
+  "home": {
+    "player": [
+      {
+        "passAttempts": 13,
+        "passCompletions": 7,
+        "passYards": 193,
+        "passTouchdowns": 1,
+        "passInterceptions": 1,
+        "rushAttempts": 1,
+        "rushYards": 23,
+        "rushTouchdowns": 0
+      },
+      {
+        "passAttempts": 0,
+        "passCompletions": 0,
+        "passYards": 0,
+        "passTouchdowns": 0,
+        "passInterceptions": 0,
+        "rushAttempts": 0,
+        "rushYards": 0,
+        "rushTouchdowns": 0
+      }
+    ]
+  }
+}

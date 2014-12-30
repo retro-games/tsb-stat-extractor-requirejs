@@ -2,7 +2,8 @@
  * Created by Ed on 12/27/14.
  */
 
-define(function() {
+define(function () {
+    'use strict';
 
     function Definition() {
 
@@ -21,7 +22,7 @@ define(function() {
             puntReturns: undefined,
             puntReturnYards: undefined,
             puntReturnTouchdowns: undefined
-        }
+        };
     }
 
     return Definition;

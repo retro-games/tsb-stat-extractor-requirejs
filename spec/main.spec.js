@@ -2,10 +2,10 @@
  * Created by Ed on 12/28/14.
  */
 
-define(['main', 'mappers/player-stats', 'mappers/team-stats'], function(m, playerStats, teamStats) {
-    var bytes;
+define(['main', 'mappers/player-stats', 'mappers/team-stats'], function (m, playerStats, teamStats) {
+    'use strict';
 
-    bytes = [];
+    var bytes = [];
 
     m.inject(playerStats, teamStats);
 
@@ -24,7 +24,7 @@ define(['main', 'mappers/player-stats', 'mappers/team-stats'], function(m, playe
             it('should request mapTeamStats from teamStats', function () {
                 m.create(bytes);
                 expect(teamStats.mapTeamStats).toHaveBeenCalled();
-            })
-        })
-    })
+            });
+        });
+    });
 });

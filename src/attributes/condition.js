@@ -3,28 +3,31 @@
  */
 
 define(function () {
+    'use strict';
 
-    var EXCELLENT = "excellent";
-    var GOOD = "good";
-    var AVERAGE = "average";
-    var BAD = "bad";
+    var AVERAGE, BAD, GOOD, EXCELLENT;
+
+    AVERAGE = "average";
+    BAD = "bad";
+    EXCELLENT = "excellent";
+    GOOD = "good";
 
     function getValue(conditionBinary) {
         var conditionValue = "";
 
         switch (conditionBinary) {
-            case "00":
-                conditionValue = BAD;
-                break;
-            case "01":
-                conditionValue = AVERAGE;
-                break;
-            case "10":
-                conditionValue = GOOD;
-                break;
-            case "11":
-                conditionValue = EXCELLENT;
-                break;
+        case "00":
+            conditionValue = BAD;
+            break;
+        case "01":
+            conditionValue = AVERAGE;
+            break;
+        case "10":
+            conditionValue = GOOD;
+            break;
+        case "11":
+            conditionValue = EXCELLENT;
+            break;
         }
 
         return conditionValue;

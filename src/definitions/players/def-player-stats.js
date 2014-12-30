@@ -2,7 +2,8 @@
  * Created by Ed on 12/28/14.
  */
 
-define(function() {
+define(function () {
+    'use strict';
 
     function Definition() {
 
@@ -12,7 +13,7 @@ define(function() {
             interceptions: undefined,
             intYards: undefined,
             intTouchdowns: undefined
-        }
+        };
     }
 
     return Definition;

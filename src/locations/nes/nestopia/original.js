@@ -2,7 +2,8 @@
  * Created by Ed on 12/22/14.
  */
 
-define(function() {
+define(function () {
+    'use strict';
 
     return {
         FIRST_DOWNS: 6429,
@@ -10,5 +11,5 @@ define(function() {
         PLAYER_STATS_AWAY: 6042,
         SCORES: 973,
         TEAM_IDS: 164
-    }
+    };
 });

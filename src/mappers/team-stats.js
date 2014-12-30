@@ -2,7 +2,8 @@
  * Created by Ed on 12/21/14.
  */
 
-define(['definitions/team-stats', 'locations/nes/nestopia/original'], function(TeamStats, location) {
+define(['definitions/team-stats', 'locations/nes/nestopia/original'], function (TeamStats, location) {
+    'use strict';
 
     function mapFirstDowns(gameStats, bytes) {
         var bytePosition = location.FIRST_DOWNS;
@@ -14,17 +15,17 @@ define(['definitions/team-stats', 'locations/nes/nestopia/original'], function(T
     function mapScores(gameStats, bytes) {
         var bytePosition = location.SCORES;
 
-        gameStats.home.team.score.firstQuarter = parseInt(bytes[bytePosition++].toString(16));
-        gameStats.home.team.score.secondQuarter = parseInt(bytes[bytePosition++].toString(16));
-        gameStats.home.team.score.thirdQuarter = parseInt(bytes[bytePosition++].toString(16));
-        gameStats.home.team.score.fourthQuarter = parseInt(bytes[bytePosition++].toString(16));
-        gameStats.home.team.score.final = parseInt(bytes[bytePosition++].toString(16));
+        gameStats.home.team.score.firstQuarter = parseInt(bytes[bytePosition++].toString(16), 10);
+        gameStats.home.team.score.secondQuarter = parseInt(bytes[bytePosition++].toString(16), 10);
+        gameStats.home.team.score.thirdQuarter = parseInt(bytes[bytePosition++].toString(16), 10);
+        gameStats.home.team.score.fourthQuarter = parseInt(bytes[bytePosition++].toString(16), 10);
+        gameStats.home.team.score.final = parseInt(bytes[bytePosition++].toString(16), 10);
 
-        gameStats.away.team.score.firstQuarter = parseInt(bytes[bytePosition++].toString(16));
-        gameStats.away.team.score.secondQuarter = parseInt(bytes[bytePosition++].toString(16));
-        gameStats.away.team.score.thirdQuarter = parseInt(bytes[bytePosition++].toString(16));
-        gameStats.away.team.score.fourthQuarter = parseInt(bytes[bytePosition++].toString(16));
-        gameStats.away.team.score.final = parseInt(bytes[bytePosition].toString(16));
+        gameStats.away.team.score.firstQuarter = parseInt(bytes[bytePosition++].toString(16), 10);
+        gameStats.away.team.score.secondQuarter = parseInt(bytes[bytePosition++].toString(16), 10);
+        gameStats.away.team.score.thirdQuarter = parseInt(bytes[bytePosition++].toString(16), 10);
+        gameStats.away.team.score.fourthQuarter = parseInt(bytes[bytePosition++].toString(16), 10);
+        gameStats.away.team.score.final = parseInt(bytes[bytePosition].toString(16), 10);
     }
 
     function mapTeamIds(gameStats, bytes) {
@@ -43,5 +44,5 @@ define(['definitions/team-stats', 'locations/nes/nestopia/original'], function(T
             mapScores(gameStats, bytes);
             mapTeamIds(gameStats, bytes);
         }
-    }
-})
+    };
+});

@@ -2,7 +2,8 @@
  * Created by Ed on 12/26/14.
  */
 
-define(function() {
+define(function () {
+    'use strict';
 
     function Definition() {
         return {
@@ -16,7 +17,7 @@ define(function() {
             rushAttempts: undefined,
             rushYards: undefined,
             rushTouchdowns: undefined
-        }
+        };
     }
 
     return Definition;

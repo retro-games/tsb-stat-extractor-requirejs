@@ -2,7 +2,9 @@
  * Created by Ed on 11/29/14.
  */
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
+    'use strict';
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
@@ -13,6 +15,38 @@ module.exports = function(grunt) {
         },
 
         clean: ['coverage', 'dist'],
+
+        jslint: {
+            all: {
+                src: [
+                    'spec/**/*.js',
+                    'src/**/*.js',
+                    'Gruntfile.js',
+                    'karma.conf.js'
+                ],
+                exclude: [
+                    'spec/test-main.js',
+                    'src/config.js'
+                ],
+                directives: {
+                    browser: true,
+                    plusplus: true,
+                    globals: [
+                        'Int16Array',
+                        'Uint8Array',
+                        'beforeEach',
+                        'define',
+                        'describe',
+                        'expect',
+                        'fixture',
+                        'it',
+                        'module',
+                        'spyOn'
+                    ],
+                    regexp: true
+                }
+            }
+        },
 
         karma: {
             unit: {
@@ -42,7 +76,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-bower-requirejs');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
+    grunt.loadNpmTasks('grunt-jslint');
     grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('default', ['bower', 'clean', 'karma', 'requirejs']);
+    grunt.registerTask('default', ['bower', 'clean', 'jslint', 'karma', 'requirejs']);
 };

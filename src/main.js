@@ -3,7 +3,8 @@
  */
 
 define(['definitions/game-stats', 'mappers/player-stats', 'mappers/team-stats'],
-    function(GameStats, playerStats, teamStats) {
+    function (GameStats, playerStats, teamStats) {
+        'use strict';
 
         return {
             create: function (bytes) {
@@ -15,9 +16,9 @@ define(['definitions/game-stats', 'mappers/player-stats', 'mappers/team-stats'],
                 return gameStats;
             },
 
-            inject: function(playerStatsMock, teamStatsMock) {
+            inject: function (playerStatsMock, teamStatsMock) {
                 playerStats = playerStatsMock;
                 teamStats = teamStatsMock;
             }
-        }
+        };
     });

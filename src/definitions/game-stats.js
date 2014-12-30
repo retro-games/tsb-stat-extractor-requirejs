@@ -2,7 +2,8 @@
  * Created by Ed on 12/26/14.
  */
 
-define(function() {
+define(function () {
+    'use strict';
 
     function Definition() {
         return {
@@ -14,7 +15,7 @@ define(function() {
                 team: undefined,
                 player: []
             }
-        }
+        };
     }
 
     return Definition;

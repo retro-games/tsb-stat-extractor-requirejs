@@ -16,6 +16,15 @@ module.exports = function (grunt) {
 
         clean: ['coverage', 'dist'],
 
+        jshint: {
+            all: [
+                'spec/**/*.js',
+                'src/**/*.js',
+                'Gruntfile.js',
+                'karma.conf.js'
+            ]
+        },
+
         jslint: {
             all: {
                 src: [
@@ -75,9 +84,10 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-bower-requirejs');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-jslint');
     grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('default', ['bower', 'clean', 'jslint', 'karma', 'requirejs']);
+    grunt.registerTask('default', ['bower', 'clean', 'jslint', 'jshint', 'karma', 'requirejs']);
 };

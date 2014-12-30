@@ -13,6 +13,7 @@ define('helpers/using', function () {
             if (Object.prototype.toString.call(values[i]) !== '[object Array]') {
                 values[i] = [values[i]];
             }
+            /*jshint validthis: true */
             func.apply(this, values[i]);
         }
     }

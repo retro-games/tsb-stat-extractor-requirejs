@@ -9,12 +9,14 @@ define(['attributes/condition', 'attributes/health', 'definitions/players/qb-sta
         'use strict';
 
         function getYards(remainder, multiplier) {
-            var totalYards;
+            var negativeMultiplier, negativeRemainder, totalYards;
 
             if (multiplier < 10) {
                 totalYards = remainder + (multiplier * 256);
             } else {
-                totalYards = (new Int16Array(-(256 - remainder)) - ((255 - multiplier) * 256))[0];
+                negativeRemainder = Math.abs(256 - remainder) * -1;
+                negativeMultiplier = Math.abs((255 - multiplier) * 256) * -1;
+                totalYards = negativeRemainder + negativeMultiplier;
             }
 
             return totalYards;

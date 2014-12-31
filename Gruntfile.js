@@ -41,7 +41,6 @@ module.exports = function (grunt) {
                     browser: true,
                     plusplus: true,
                     globals: [
-                        'Int16Array',
                         'Uint8Array',
                         'beforeEach',
                         'define',

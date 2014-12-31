@@ -6,4 +6,4 @@ Current supported versions of TSB are:
 
 NES:
 ---
-Tecmo Super Bowl (original)
+TSB (original) - Nestopia

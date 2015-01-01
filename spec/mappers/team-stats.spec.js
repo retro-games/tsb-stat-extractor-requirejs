@@ -9,7 +9,7 @@ define(['mappers/team-stats', 'definitions/game-stats', 'helpers/decode', 'helpe
         var fixtures, gameData, gameStats, jsonData, saveState;
 
         fixtures = [['game_one/state.json', 'game_one/team-stats.json'],
-            ['game_one/state.json', 'game_one/team-stats.json']];
+            ['game_two/state.json', 'game_two/team-stats.json']];
 
         fixtures.forEach(function (gameSet) {
             gameData = new GameStats();

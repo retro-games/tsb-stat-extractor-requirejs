@@ -1,28 +1,28 @@
 {
   "home": {
     "team": {
-      "firstDowns": 8,
+      "firstDowns": 9,
       "score": {
-        "firstQuarter": 7,
-        "secondQuarter": 7,
+        "firstQuarter": 6,
+        "secondQuarter": 0,
         "thirdQuarter": 0,
         "fourthQuarter": 0,
-        "final": 14
+        "final": 19
       },
-      "teamId": 1
+      "teamId": 27
     }
   },
   "away": {
     "team": {
       "firstDowns": 7,
       "score": {
-        "firstQuarter": 7,
-        "secondQuarter": 10,
+        "firstQuarter": 0,
+        "secondQuarter": 0,
         "thirdQuarter": 0,
-        "fourthQuarter": 10,
-        "final": 27
+        "fourthQuarter": 0,
+        "final": 13
       },
-      "teamId": 27
+      "teamId": 1
     }
   }
 }

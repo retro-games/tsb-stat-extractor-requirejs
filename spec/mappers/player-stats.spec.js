@@ -9,7 +9,7 @@ define(['mappers/player-stats', 'definitions/game-stats', 'helpers/decode', 'hel
         var fixtures, gameData, gameStats, i, jsonData, saveState;
 
         fixtures = [['game_one/state.json', 'game_one/player-stats.json'],
-            ['game_one/state.json', 'game_one/player-stats.json']];
+            ['game_two/state.json', 'game_two/player-stats.json']];
 
         fixtures.forEach(function (gameSet) {
             gameData = new GameStats();
@@ -73,7 +73,7 @@ define(['mappers/player-stats', 'definitions/game-stats', 'helpers/decode', 'hel
 
                     using('away team values', ['sacks', 'interceptions', 'intYards', 'intTouchdowns'], function (value) {
                         it('should return correct values', function () {
-                            for (i = 12; i < 23; i++) {
+                            for (i = 12; i < 13; i++) {
                                 expect(gameStats.away.player[i][value]).toEqual(gameData.away.player[i][value]);
                             }
                         });

@@ -49,6 +49,7 @@ module.exports = function (grunt) {
                         'fixture',
                         'it',
                         'module',
+                        'require',
                         'spyOn'
                     ],
                     regexp: true

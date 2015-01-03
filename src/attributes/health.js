@@ -5,40 +5,31 @@
 define(function () {
     'use strict';
 
-    var DOUBTFUL, HEALTHY, PROBABLE, QUESTIONABLE;
-
-    DOUBTFUL = "doubtful";
-    HEALTHY = "healthy";
-    PROBABLE = "probable";
-    QUESTIONABLE = "questionable";
-
-    function getValue(healthBinary) {
-        var healthValue = "";
-
-        switch (healthBinary) {
-        case "00":
-            healthValue = HEALTHY;
-            break;
-        case "01":
-            healthValue = PROBABLE;
-            break;
-        case "10":
-            healthValue = QUESTIONABLE;
-            break;
-        case "11":
-            healthValue = DOUBTFUL;
-            break;
-        }
-
-        return healthValue;
-    }
-
     return {
-        DOUBTFUL: DOUBTFUL,
-        HEALTHY: HEALTHY,
-        PROBABLE: PROBABLE,
-        QUESTIONABLE: QUESTIONABLE,
+        DOUBTFUL: 'doubtful',
+        HEALTHY: 'healthy',
+        PROBABLE: 'probable',
+        QUESTIONABLE: 'questionable',
 
-        getValue: getValue
+        getValue: function (healthBinary) {
+            var healthValue = "";
+
+            switch (healthBinary) {
+            case '00':
+                healthValue = this.HEALTHY;
+                break;
+            case '01':
+                healthValue = this.PROBABLE;
+                break;
+            case '10':
+                healthValue = this.QUESTIONABLE;
+                break;
+            case '11':
+                healthValue = this.DOUBTFUL;
+                break;
+            }
+
+            return healthValue;
+        }
     };
 });

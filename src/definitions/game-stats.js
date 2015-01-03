@@ -5,8 +5,9 @@
 define(function () {
     'use strict';
 
-    function Definition() {
+    function Definition(type) {
         return {
+            saveState: type,
             home: {
                 team: undefined,
                 player: []

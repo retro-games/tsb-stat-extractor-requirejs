@@ -2,14 +2,15 @@
  * Created by Ed on 12/4/14.
  */
 
-define(['mappers/team-stats', 'definitions/game-stats', 'helpers/decode', 'helpers/using'],
-    function (m, GameStats, decode, using) {
+define(['extractors/nes/team-stats', 'definitions/game-stats', 'extractors/nes/nestopia/original',
+        'helpers/decode', 'helpers/using'],
+    function (m, GameStats, nestopiaOriginalExtractor, decode, using) {
         'use strict';
 
         var fixtures, gameData, gameStats, jsonData, saveState;
 
-        fixtures = [['game_one/state.json', 'game_one/team-stats.json'],
-            ['game_two/state.json', 'game_two/team-stats.json']];
+        fixtures = [['nes/game_one/state.json', 'nes/game_one/team-stats.json'],
+            ['nes/game_two/state.json', 'nes/game_two/team-stats.json']];
 
         fixtures.forEach(function (gameSet) {
             gameData = new GameStats();
@@ -17,7 +18,7 @@ define(['mappers/team-stats', 'definitions/game-stats', 'helpers/decode', 'helpe
             gameStats = jsonData[1];
             saveState = decode(jsonData[0].binary);
 
-            m.mapTeamStats(gameData, saveState);
+            m.mapTeamStats(gameData, saveState, nestopiaOriginalExtractor.LOCATION);
 
             describe('team stats', function () {
                 describe('first downs', function () {

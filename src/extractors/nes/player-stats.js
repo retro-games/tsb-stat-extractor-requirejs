@@ -4,8 +4,8 @@
 
 define(['attributes/condition', 'attributes/health', 'definitions/players/qb-stats',
         'definitions/players/off-player-stats', 'definitions/players/def-player-stats',
-        'definitions/players/kick-stats', 'definitions/players/punt-stats', 'locations/nes/nestopia/original'],
-    function (condition, health, QBStats, OffPlayerStats, DefPlayerStats, KickStats, PuntStats, location) {
+        'definitions/players/kick-stats', 'definitions/players/punt-stats'],
+    function (condition, health, QBStats, OffPlayerStats, DefPlayerStats, KickStats, PuntStats) {
         'use strict';
 
         function getYards(remainder, multiplier) {
@@ -159,7 +159,7 @@ define(['attributes/condition', 'attributes/health', 'definitions/players/qb-sta
         }
 
         return {
-            mapPlayerStats: function (gameStats, bytes) {
+            mapPlayerStats: function (gameStats, bytes, location) {
                 mapPlayerStats(gameStats.home.player, location.PLAYER_STATS_HOME, bytes);
                 mapPlayerStats(gameStats.away.player, location.PLAYER_STATS_AWAY, bytes);
             }

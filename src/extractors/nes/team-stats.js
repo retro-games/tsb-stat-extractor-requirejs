@@ -2,17 +2,17 @@
  * Created by Ed on 12/21/14.
  */
 
-define(['definitions/team-stats', 'locations/nes/nestopia/original'], function (TeamStats, location) {
+define(['definitions/team-stats'], function (TeamStats) {
     'use strict';
 
-    function mapFirstDowns(gameStats, bytes) {
+    function mapFirstDowns(gameStats, bytes, location) {
         var bytePosition = location.FIRST_DOWNS;
 
         gameStats.home.team.firstDowns = bytes[bytePosition++];
         gameStats.away.team.firstDowns = bytes[bytePosition];
     }
 
-    function mapScores(gameStats, bytes) {
+    function mapScores(gameStats, bytes, location) {
         var bytePosition = location.SCORES;
 
         gameStats.home.team.score.firstQuarter = parseInt(bytes[bytePosition++].toString(16), 10);
@@ -28,7 +28,7 @@ define(['definitions/team-stats', 'locations/nes/nestopia/original'], function (
         gameStats.away.team.score.final = parseInt(bytes[bytePosition].toString(16), 10);
     }
 
-    function mapTeamIds(gameStats, bytes) {
+    function mapTeamIds(gameStats, bytes, location) {
         var bytePosition = location.TEAM_IDS;
 
         gameStats.home.team.teamId = bytes[bytePosition++];
@@ -36,13 +36,13 @@ define(['definitions/team-stats', 'locations/nes/nestopia/original'], function (
     }
 
     return {
-        mapTeamStats: function (gameStats, bytes) {
+        mapTeamStats: function (gameStats, bytes, location) {
             gameStats.home.team = new TeamStats();
             gameStats.away.team = new TeamStats();
 
-            mapFirstDowns(gameStats, bytes);
-            mapScores(gameStats, bytes);
-            mapTeamIds(gameStats, bytes);
+            mapFirstDowns(gameStats, bytes, location);
+            mapScores(gameStats, bytes, location);
+            mapTeamIds(gameStats, bytes, location);
         }
     };
 });

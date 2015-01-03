@@ -15,6 +15,12 @@ define(['definitions/game-stats', 'extractors/nes/player-stats', 'extractors/nes
                 TEAM_IDS: 164
             },
 
+            inject: function (GameStatsMock, playerStatsMock, teamStatsMock) {
+                GameStats = GameStatsMock;
+                playerStats = playerStatsMock;
+                teamStats = teamStatsMock;
+            },
+
             extract: function (bytes, saveStateType) {
                 var gameStats = new GameStats(saveStateType);
                 teamStats.mapTeamStats(gameStats, bytes, this.LOCATION);

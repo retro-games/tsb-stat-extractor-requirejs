@@ -7,7 +7,7 @@ define(function () {
 
     function Definition(type) {
         return {
-            saveState: type,
+            saveStateType: type,
             home: {
                 team: undefined,
                 player: []

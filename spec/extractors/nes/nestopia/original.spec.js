@@ -7,7 +7,9 @@ define(['extractors/nes/nestopia/original', 'save-states', 'definitions/game-sta
     function (m, saveStates, GameStatsMock, playerStatsMock, teamStatsMock) {
         'use strict';
 
-        var bytes = [];
+        var bytes, result;
+
+        bytes = [];
 
         m.inject(GameStatsMock, playerStatsMock, teamStatsMock);
 
@@ -16,6 +18,11 @@ define(['extractors/nes/nestopia/original', 'save-states', 'definitions/game-sta
                 beforeEach(function () {
                     spyOn(playerStatsMock, 'mapPlayerStats').and.callFake(function () { return undefined; });
                     spyOn(teamStatsMock, 'mapTeamStats').and.callFake(function () { return undefined; });
+                });
+
+                it('should return save state type in game stats result', function () {
+                    result = m.extract(bytes, saveStates.NES_NESTOPIA.TYPE);
+                    expect(result.saveStateType).toBe(saveStates.NES_NESTOPIA.TYPE);
                 });
 
                 it('should request mapPlayerStats from playerStats', function () {

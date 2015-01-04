@@ -153,7 +153,7 @@ module.exports = function (grunt) {
                     message: 'tsbstatextractor tag <%= pkg.version %>'
                 }
             }
-        },
+        }
     });
 
     grunt.loadNpmTasks('grunt-banner');

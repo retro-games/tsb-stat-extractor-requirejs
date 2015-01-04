@@ -90,4 +90,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-karma');
 
     grunt.registerTask('default', ['bower', 'clean', 'jslint', 'jshint', 'karma', 'requirejs']);
+    grunt.registerTask('ci', ['bower', 'clean', 'jslint', 'jshint', 'karma', 'requirejs']);
 };

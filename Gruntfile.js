@@ -139,14 +139,6 @@ module.exports = function (grunt) {
                     'package.json'
                 ]
             }
-        },
-
-        gitmerge: {
-            release: {
-                options: {
-                    branch: 'develop'
-                }
-            }
         }
     });
 
@@ -167,7 +159,6 @@ module.exports = function (grunt) {
         'bumpup', 'uglify', 'usebanner']);
     grunt.registerTask('release', function (release) {
         release = release || 'patch';
-        grunt.task.run('gitmerge');
         grunt.task.run('clean');
         grunt.task.run('jslint');
         grunt.task.run('jshint');

@@ -102,15 +102,8 @@ module.exports = function (grunt) {
             files: ['dist/tsbstatextractor.min.js']
         },
 
-        release: {
-            options: {
-                bump: false,
-                npm: false
-            }
-        },
-
         gitadd: {
-            task: {
+            release: {
                 options: {
                     force: true
                 },
@@ -128,18 +121,39 @@ module.exports = function (grunt) {
 
         gitcommit: {
             release: {
-                message: 'tsbstatextractor release files'
-            },
-            files: {
-                src: [
-                    'dist/tsbstatextractor.js',
-                    'dist/tsbstatextractor.min.js',
-                    'dist/tsbstatextractor.min.map',
-                    'bower.json',
-                    'package.json'
-                ]
+                options: {
+                    message: 'tsbstatextractor release files'
+                },
+                files: {
+                    src: [
+                        'dist/tsbstatextractor.js',
+                        'dist/tsbstatextractor.min.js',
+                        'dist/tsbstatextractor.min.map',
+                        'bower.json',
+                        'package.json'
+                    ]
+                }
             }
-        }
+        },
+
+        gitpush: {
+            release: {
+                options: {
+                    branch: 'master',
+                    remote: 'origin',
+                    tags: true
+                }
+            }
+        },
+
+        gittag: {
+            release: {
+                options: {
+                    tag: '<%= pkg.version %>',
+                    message: 'tsbstatextractor tag <%= pkg.version %>'
+                }
+            }
+        },
     });
 
     grunt.loadNpmTasks('grunt-banner');
@@ -151,7 +165,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-git');
     grunt.loadNpmTasks('grunt-jslint');
     grunt.loadNpmTasks('grunt-karma');
-    grunt.loadNpmTasks('grunt-release');
 
     grunt.registerTask('default', ['clean', 'jslint', 'jshint', 'karma', 'requirejs']);
     grunt.registerTask('ci', ['clean', 'jslint', 'jshint', 'karma', 'requirejs']);
@@ -169,6 +182,7 @@ module.exports = function (grunt) {
         grunt.task.run('usebanner');
         grunt.task.run('gitadd');
         grunt.task.run('gitcommit');
-        grunt.task.run('release');
+        grunt.task.run('gittag');
+        grunt.taks.run('gitpush');
     });
 };

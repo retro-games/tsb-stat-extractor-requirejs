@@ -183,6 +183,6 @@ module.exports = function (grunt) {
         grunt.task.run('gitadd');
         grunt.task.run('gitcommit');
         grunt.task.run('gittag');
-        grunt.taks.run('gitpush');
+        grunt.task.run('gitpush');
     });
 };

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "homepage": "https://github.com/edrex333/tsbstatextractor",
   "authors": [
-    "Ed <edgrams333@gmail.com>"
+    "Ed Grams <edgramswork@gmail.com>"
   ],
   "moduleType": [
     "amd",
@@ -12,12 +12,13 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
-    "node_modules",
     "bower_components",
-    "test",
-    "tests"
-  ],
-  "devDependencies": {
-    "jquery": "~2.1.1"
-  }
+    "node_modules",
+    "spec",
+    "Gruntfile.js",
+    "jenkins-grunt.sh",
+    "karma.conf.js",
+    "package.json",
+    "test-results.xml"
+  ]
 }

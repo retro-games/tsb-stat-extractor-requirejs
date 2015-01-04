@@ -13,10 +13,6 @@ requirejs.config({
     // Karma serves files from '/base'
     baseUrl: '/base/src',
 
-    paths: {
-        jquery: "../bower_components/jquery/dist/jquery"
-    },
-
     // ask Require.js to load these files (all our tests)
     deps: tests,
 

@@ -8,12 +8,6 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        bower: {
-            src: {
-                rjsConfig: 'src/config.js'
-            }
-        },
-
         clean: ['coverage', 'dist'],
 
         jshint: {
@@ -71,9 +65,6 @@ module.exports = function (grunt) {
                     mainConfigFile: 'src/config.js',
                     name: 'main',
                     out: 'dist/tsbstatextractor.js',
-                    paths: {
-                        "jquery": "empty:"
-                    },
                     wrap: {
                         endFile: 'src/tsbex-footer.js'
                     }
@@ -82,13 +73,12 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.loadNpmTasks('grunt-bower-requirejs');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-jslint');
     grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('default', ['bower', 'clean', 'jslint', 'jshint', 'karma', 'requirejs']);
-    grunt.registerTask('ci', ['bower', 'clean', 'jslint', 'jshint', 'karma', 'requirejs']);
+    grunt.registerTask('default', ['clean', 'jslint', 'jshint', 'karma', 'requirejs']);
+    grunt.registerTask('ci', ['clean', 'jslint', 'jshint', 'karma', 'requirejs']);
 };

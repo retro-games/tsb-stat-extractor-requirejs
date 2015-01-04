@@ -5,16 +5,22 @@ module.exports = function (config) {
     'use strict';
 
     var customLaunchers = {
+        sl_ie_11: {
+            base: 'SauceLabs',
+            browserName: 'internet explorer',
+            platform: 'Windows 7',
+            version: '11'
+        },
         sl_chrome: {
             base: 'SauceLabs',
             browserName: 'chrome',
-            platform: 'linux',
+            platform: 'Windows 7',
             version: '39'
         },
         sl_firefox: {
             base: 'SauceLabs',
             browserName: 'firefox',
-            platform: 'linux',
+            platform: 'Windows 7',
             version: '34'
         },
         sl_ios_safari: {
@@ -23,11 +29,11 @@ module.exports = function (config) {
             platform: 'OS X 10.9',
             version: '7'
         },
-        sl_ie_11: {
+        sl_opera: {
             base: 'SauceLabs',
-            browserName: 'internet explorer',
-            platform: 'Windows 8.1',
-            version: '11'
+            browserName: 'opera',
+            platform: 'Windows 7',
+            version: '12'
         }
     };
 

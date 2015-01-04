@@ -7,3 +7,10 @@ before_install:
 install:
   - npm install
   - bower install
+branches:
+  only:
+    - master
+env:
+  global:
+    - secure: KFmGLIx8y/H6mv1QiMyjWYGAa56b8+MZw6OzGoAyu/K47WLjKA04NPRmorZ15exAg+/XskRmCfxTqo9JsmjZBUlaCPX8wBrJAT1csagYGVNrZ7v5iI/SKy0whGfezcO7GmB4rjCG/ZfGimyLKtCi6IazgxH+rClbZKRJTmHONyI=
+    - secure: bLcgxR8Bml3OTSOesWp+tqnv9DosjZVx4UQ5Nj0hPfpZVZuW/2jwocM6UyaaY437JFfV1cvt+Sq0f8RrcMbOC49OLsWzpHO6h9gxtoBADAXS66sFf77LklCnkkVG9VuIo6tG+TVtZsA7D4Mv4AZVJOOzK64eaXF53wtk6+5FllA=

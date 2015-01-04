@@ -4,6 +4,33 @@
 module.exports = function (config) {
     'use strict';
 
+    var customLaunchers = {
+        sl_chrome: {
+            base: 'SauceLabs',
+            browserName: 'chrome',
+            platform: 'linux',
+            version: '39'
+        },
+        sl_firefox: {
+            base: 'SauceLabs',
+            browserName: 'firefox',
+            platform: 'linux',
+            version: '34'
+        },
+        sl_ios_safari: {
+            base: 'SauceLabs',
+            browserName: 'safari',
+            platform: 'OS X 10.9',
+            version: '7'
+        },
+        sl_ie_11: {
+            base: 'SauceLabs',
+            browserName: 'internet explorer',
+            platform: 'Windows 8.1',
+            version: '11'
+        }
+    };
+
     config.set({
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -35,10 +62,12 @@ module.exports = function (config) {
             '**/*.json' : ['html2js']
         },
 
-        // spec results reporter to use
-        // possible values: 'dots', 'progress'
-        // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['spec', 'junit', 'coverage'],
+        sauceLabs: {
+            testName: 'Web App Unit Tests'
+        },
+        customLaunchers: customLaunchers,
+        browsers: Object.keys(customLaunchers),
+        reporters: ['dots', 'saucelabs'],
 
         junitReporter: {
             outputFile: 'test-results.xml'
@@ -62,10 +91,6 @@ module.exports = function (config) {
 
         // enable / disable watching file and executing tests whenever any file changes
         autoWatch: false,
-
-        // start these browsers
-        // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: ['PhantomJS', 'Chrome', 'Firefox', 'Safari'],
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits

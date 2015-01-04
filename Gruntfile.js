@@ -182,7 +182,7 @@ module.exports = function (grunt) {
         grunt.task.run('usebanner');
         grunt.task.run('gitadd');
         grunt.task.run('gitcommit');
-        grunt.task.run('gittag');
         grunt.task.run('gitpush');
     });
+    grunt.registerTask('tag', ['gittag', 'gitpush'])
 };

@@ -64,21 +64,100 @@ module.exports = function (grunt) {
                     baseUrl: 'src',
                     mainConfigFile: 'src/config.js',
                     name: 'main',
+                    optimize: 'none',
                     out: 'dist/tsbstatextractor.js',
                     wrap: {
                         endFile: 'src/tsbex-footer.js'
                     }
                 }
             }
+        },
+
+        bumpup: {
+            options: {
+                updateProps: {
+                    pkg: 'package.json'
+                }
+            },
+            files: ['bower.json', 'package.json']
+        },
+
+        uglify: {
+            release: {
+                options: {
+                    sourceMap: true,
+                    sourceMapName: 'dist/tsbstatextractor.min.map'
+                },
+                src: 'dist/tsbstatextractor.js',
+                dest: 'dist/tsbstatextractor.min.js'
+            }
+        },
+
+        usebanner: {
+            options: {
+                position: 'top',
+                banner: "/*! tsbstatextractor.min.js <%= pkg.version %> */",
+                linebreak: true
+            },
+            files: ['dist/tsbstatextractor.min.js']
+        },
+
+        release: {
+            options: {
+                bump: false,
+                npm: false
+            }
+        },
+
+        gitcommit: {
+            release: {
+                message: 'release tsbstatextractor dist files'
+            },
+            files: {
+                src: [
+                    'dist/tsbstatextractor.js',
+                    'dist/tsbstatextractor.min.js',
+                    'dist/tsbstatextractor.min.map'
+                ]
+            }
+        },
+
+        gitmerge: {
+            release: {
+                options: {
+                    branch: 'develop'
+                }
+            }
         }
     });
 
+    grunt.loadNpmTasks('grunt-banner');
+    grunt.loadNpmTasks('grunt-bumpup');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-git');
     grunt.loadNpmTasks('grunt-jslint');
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-release');
 
     grunt.registerTask('default', ['clean', 'jslint', 'jshint', 'karma', 'requirejs']);
     grunt.registerTask('ci', ['clean', 'jslint', 'jshint', 'karma', 'requirejs']);
+    grunt.registerTask('release', ['clean', 'jslint', 'jshint', 'karma', 'requirejs',
+        'bumpup', 'uglify', 'usebanner']);
+    grunt.registerTask('release', function (release) {
+        release = release || 'patch';
+        grunt.task.run('gitmerge');
+        grunt.task.run('clean');
+        grunt.task.run('jslint');
+        grunt.task.run('jshint');
+        grunt.task.run('karma');
+        grunt.task.run('requirejs');
+        grunt.task.run('bumpup:' + release);
+        grunt.task.run('uglify');
+        grunt.task.run('usebanner');
+        grunt.task.run('gitcommit');
+        grunt.task.run('release');
+    });
 };

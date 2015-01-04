@@ -184,5 +184,5 @@ module.exports = function (grunt) {
         grunt.task.run('gitcommit');
         grunt.task.run('gitpush');
     });
-    grunt.registerTask('tag', ['gittag', 'gitpush'])
+    grunt.registerTask('tag', ['gittag', 'gitpush']);
 };

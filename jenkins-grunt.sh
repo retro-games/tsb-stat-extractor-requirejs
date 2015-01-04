@@ -2,4 +2,4 @@
 
 bower install
 npm install
-grunt --force
+grunt ci --force

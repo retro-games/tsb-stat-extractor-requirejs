@@ -109,15 +109,34 @@ module.exports = function (grunt) {
             }
         },
 
+        gitadd: {
+            task: {
+                options: {
+                    force: true
+                },
+                files: {
+                    src: [
+                        'dist/tsbstatextractor.js',
+                        'dist/tsbstatextractor.min.js',
+                        'dist/tsbstatextractor.min.map',
+                        'bower.json',
+                        'package.json'
+                    ]
+                }
+            }
+        },
+
         gitcommit: {
             release: {
-                message: 'release tsbstatextractor dist files'
+                message: 'tsbstatextractor release files'
             },
             files: {
                 src: [
                     'dist/tsbstatextractor.js',
                     'dist/tsbstatextractor.min.js',
-                    'dist/tsbstatextractor.min.map'
+                    'dist/tsbstatextractor.min.map',
+                    'bower.json',
+                    'package.json'
                 ]
             }
         },
@@ -157,6 +176,7 @@ module.exports = function (grunt) {
         grunt.task.run('bumpup:' + release);
         grunt.task.run('uglify');
         grunt.task.run('usebanner');
+        grunt.task.run('gitadd');
         grunt.task.run('gitcommit');
         grunt.task.run('release');
     });

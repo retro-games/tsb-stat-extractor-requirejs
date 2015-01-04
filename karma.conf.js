@@ -63,7 +63,7 @@ module.exports = function (config) {
         },
 
         sauceLabs: {
-            testName: 'Web App Unit Tests'
+            testName: 'tsb-stat-extractor unit tests'
         },
         customLaunchers: customLaunchers,
         browsers: Object.keys(customLaunchers),

@@ -56,6 +56,9 @@ module.exports = function (grunt) {
                 configFile: 'karma.conf.js',
                 browsers: ['PhantomJS'],
                 reporters: ['spec', 'junit', 'coverage']
+            },
+            saucelabs: {
+                configFile: 'karma.conf.js'
             }
         },
 
@@ -168,7 +171,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-karma');
 
     grunt.registerTask('default', ['clean', 'jslint', 'jshint', 'karma:phantomjs', 'requirejs']);
-    grunt.registerTask('ci', ['clean', 'jslint', 'jshint', 'karma', 'requirejs']);
+    grunt.registerTask('ci', ['clean', 'jslint', 'jshint', 'karma:saucelabs', 'requirejs']);
     grunt.registerTask('release', function (release) {
         release = release || 'patch';
         grunt.task.run('clean');

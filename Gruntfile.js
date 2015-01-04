@@ -52,9 +52,10 @@ module.exports = function (grunt) {
         },
 
         karma: {
-            unit: {
+            phantomjs: {
                 configFile: 'karma.conf.js',
-                browsers: ['PhantomJS']
+                browsers: ['PhantomJS'],
+                reporters: ['spec', 'junit', 'coverage']
             }
         },
 
@@ -166,16 +167,14 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-jslint');
     grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('default', ['clean', 'jslint', 'jshint', 'karma', 'requirejs']);
+    grunt.registerTask('default', ['clean', 'jslint', 'jshint', 'karma:phantomjs', 'requirejs']);
     grunt.registerTask('ci', ['clean', 'jslint', 'jshint', 'karma', 'requirejs']);
-    grunt.registerTask('release', ['clean', 'jslint', 'jshint', 'karma', 'requirejs',
-        'bumpup', 'uglify', 'usebanner']);
     grunt.registerTask('release', function (release) {
         release = release || 'patch';
         grunt.task.run('clean');
         grunt.task.run('jslint');
         grunt.task.run('jshint');
-        grunt.task.run('karma');
+        grunt.task.run('karma:phantomjs');
         grunt.task.run('requirejs');
         grunt.task.run('bumpup:' + release);
         grunt.task.run('uglify');

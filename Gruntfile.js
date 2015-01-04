@@ -65,7 +65,7 @@ module.exports = function (grunt) {
                     mainConfigFile: 'src/config.js',
                     name: 'main',
                     optimize: 'none',
-                    out: 'dist/tsbstatextractor.js',
+                    out: 'dist/tsb-stat-extractor.js',
                     wrap: {
                         endFile: 'src/tsbex-footer.js'
                     }
@@ -86,20 +86,20 @@ module.exports = function (grunt) {
             release: {
                 options: {
                     sourceMap: true,
-                    sourceMapName: 'dist/tsbstatextractor.min.map'
+                    sourceMapName: 'dist/tsb-stat-extractor.min.map'
                 },
-                src: 'dist/tsbstatextractor.js',
-                dest: 'dist/tsbstatextractor.min.js'
+                src: 'dist/tsb-stat-extractor.js',
+                dest: 'dist/tsb-stat-extractor.min.js'
             }
         },
 
         usebanner: {
             options: {
                 position: 'top',
-                banner: "/*! tsbstatextractor.min.js <%= pkg.version %> */",
+                banner: "/*! tsb-stat-extractor.min.js <%= pkg.version %> */",
                 linebreak: true
             },
-            files: ['dist/tsbstatextractor.min.js']
+            files: ['dist/tsb-stat-extractor.min.js']
         },
 
         gitadd: {
@@ -109,9 +109,9 @@ module.exports = function (grunt) {
                 },
                 files: {
                     src: [
-                        'dist/tsbstatextractor.js',
-                        'dist/tsbstatextractor.min.js',
-                        'dist/tsbstatextractor.min.map',
+                        'dist/tsb-stat-extractor.js',
+                        'dist/tsb-stat-extractor.min.js',
+                        'dist/tsb-stat-extractor.min.map',
                         'bower.json',
                         'package.json'
                     ]
@@ -122,13 +122,13 @@ module.exports = function (grunt) {
         gitcommit: {
             release: {
                 options: {
-                    message: 'tsbstatextractor release files'
+                    message: 'tsb-stat-extractor release files'
                 },
                 files: {
                     src: [
-                        'dist/tsbstatextractor.js',
-                        'dist/tsbstatextractor.min.js',
-                        'dist/tsbstatextractor.min.map',
+                        'dist/tsb-stat-extractor.js',
+                        'dist/tsb-stat-extractor.min.js',
+                        'dist/tsb-stat-extractor.min.map',
                         'bower.json',
                         'package.json'
                     ]
@@ -150,7 +150,7 @@ module.exports = function (grunt) {
             release: {
                 options: {
                     tag: '<%= pkg.version %>',
-                    message: 'tsbstatextractor tag <%= pkg.version %>'
+                    message: 'tsb-stat-extractor tag <%= pkg.version %>'
                 }
             }
         }

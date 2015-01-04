@@ -1,9 +1,9 @@
-# tsbstatextractor
-[![Build Status](https://travis-ci.org/edrex333/tsbstatextractor.svg?branch=master)]
-(https://travis-ci.org/edrex333/tsbstatextractor)
-![Dependencies](https://david-dm.org/edrex333/tsbstatextractor.svg?branch-master)
+# tsb-stat-extractor
+[![Build Status](https://travis-ci.org/edrex333/tsb-stat-extractor.svg?branch=master)]
+(https://travis-ci.org/edrex333/tsb-stat-extractor)
+![Dependencies](https://david-dm.org/edrex333/tsb-stat-extractor.svg?branch-master)
 
-A TSB extractor written in JavaScript.
+A TSB stat extractor written in JavaScript.
 
 ## Supported versions
 

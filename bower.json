@@ -1,8 +1,8 @@
 {
-  "name": "tsbstatextractor",
+  "name": "tsb-stat-extractor",
   "version": "0.0.0",
-  "main": "dist/tsbstatextractor.min.js",
-  "homepage": "https://github.com/edrex333/tsbstatextractor",
+  "main": "dist/tsb-stat-extractor.min.js",
+  "homepage": "https://github.com/edrex333/tsb-stat-extractor",
   "authors": [
     "Ed Grams <edgramswork@gmail.com>"
   ],

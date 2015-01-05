@@ -1,6 +1,6 @@
 {
   "name": "tsb-stat-extractor",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A TSB stat extractor written in JavaScript.",
   "main": "dist/tsb-stat-extractor.min.js",
   "scripts": {

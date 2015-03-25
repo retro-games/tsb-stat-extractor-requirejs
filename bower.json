@@ -3,9 +3,7 @@
   "version": "0.0.5",
   "main": "dist/tsb-stat-extractor.min.js",
   "homepage": "https://github.com/edrex333/tsb-stat-extractor",
-  "authors": [
-    "Ed Grams <edgramswork@gmail.com>"
-  ],
+  "author": "Ed Grams <edrex333@gmail.com>",
   "moduleType": [
     "amd",
     "es6"

@@ -15,13 +15,13 @@ module.exports = function (config) {
             base: 'SauceLabs',
             browserName: 'chrome',
             platform: 'Linux',
-            version: '41'
+            version: '42'
         },
         sl_firefox: {
             base: 'SauceLabs',
             browserName: 'firefox',
             platform: 'Linux',
-            version: '35'
+            version: '37'
         },
         sl_ios_safari: {
             base: 'SauceLabs',

@@ -3,7 +3,7 @@
  */
 
 define('save-states',[],function () {
-    
+    'use strict';
 
     return {
         NES_NESTOPIA: {
@@ -21,7 +21,7 @@ define('save-states',[],function () {
  */
 
 define('detector',['save-states'], function (saveStates) {
-    
+    'use strict';
 
     return {
         detect: function (bytes) {
@@ -40,7 +40,7 @@ define('detector',['save-states'], function (saveStates) {
  */
 
 define('definitions/game-stats',[],function () {
-    
+    'use strict';
 
     function Definition(type) {
         return {
@@ -63,7 +63,7 @@ define('definitions/game-stats',[],function () {
  */
 
 define('attributes/condition',[],function () {
-    
+    'use strict';
 
     return {
         AVERAGE: 'average',
@@ -98,7 +98,7 @@ define('attributes/condition',[],function () {
  */
 
 define('attributes/health',[],function () {
-    
+    'use strict';
 
     return {
         DOUBTFUL: 'doubtful',
@@ -133,7 +133,7 @@ define('attributes/health',[],function () {
  */
 
 define('definitions/players/qb-stats',[],function () {
-    
+    'use strict';
 
     function Definition() {
         return {
@@ -157,7 +157,7 @@ define('definitions/players/qb-stats',[],function () {
  */
 
 define('definitions/players/off-player-stats',[],function () {
-    
+    'use strict';
 
     function Definition() {
 
@@ -186,7 +186,7 @@ define('definitions/players/off-player-stats',[],function () {
  */
 
 define('definitions/players/def-player-stats',[],function () {
-    
+    'use strict';
 
     function Definition() {
 
@@ -206,7 +206,7 @@ define('definitions/players/def-player-stats',[],function () {
  */
 
 define('definitions/players/kick-stats',[],function () {
-    
+    'use strict';
 
     function Definition() {
 
@@ -226,7 +226,7 @@ define('definitions/players/kick-stats',[],function () {
  */
 
 define('definitions/players/punt-stats',[],function () {
-    
+    'use strict';
 
     function Definition() {
 
@@ -247,7 +247,7 @@ define('extractors/nes/player-stats',['attributes/condition', 'attributes/health
         'definitions/players/off-player-stats', 'definitions/players/def-player-stats',
         'definitions/players/kick-stats', 'definitions/players/punt-stats'],
     function (condition, health, QBStats, OffPlayerStats, DefPlayerStats, KickStats, PuntStats) {
-        
+        'use strict';
 
         function getYards(remainder, multiplier) {
             var negativeMultiplier, negativeRemainder, totalYards;
@@ -411,7 +411,7 @@ define('extractors/nes/player-stats',['attributes/condition', 'attributes/health
  */
 
 define('definitions/team-stats',[],function () {
-    
+    'use strict';
 
     function Definition() {
         return {
@@ -434,7 +434,7 @@ define('definitions/team-stats',[],function () {
  */
 
 define('extractors/nes/team-stats',['definitions/team-stats'], function (TeamStats) {
-    
+    'use strict';
 
     function mapFirstDowns(gameStats, bytes, location) {
         var bytePosition = location.FIRST_DOWNS;
@@ -483,7 +483,7 @@ define('extractors/nes/team-stats',['definitions/team-stats'], function (TeamSta
 
 define('extractors/nes/nestopia/original',['definitions/game-stats', 'extractors/nes/player-stats', 'extractors/nes/team-stats'],
     function (GameStats, playerStats, teamStats) {
-        
+        'use strict';
 
         return {
             LOCATION: {
@@ -514,7 +514,7 @@ define('extractors/nes/nestopia/original',['definitions/game-stats', 'extractors
 
 define('main',['detector', 'save-states', 'extractors/nes/nestopia/original'],
     function (detector, saveStates, nestopiaOriginalExtractor) {
-        
+        'use strict';
 
         return {
             inject: function (detectorMock, nestopiaOriginalExtractorMock) {
@@ -542,7 +542,7 @@ define('main',['detector', 'save-states', 'extractors/nes/nestopia/original'],
  */
 
 define(['main'], function (main) {
-    
+    'use strict';
 
     return main;
 });

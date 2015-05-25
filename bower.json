@@ -1,6 +1,6 @@
 {
   "name": "tsb-stat-extractor",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": "dist/tsb-stat-extractor.min.js",
   "homepage": "https://github.com/edrex333/tsb-stat-extractor",
   "author": "edrex333 <edrex333@gmail.com>",
